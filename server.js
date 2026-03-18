@@ -30,7 +30,6 @@ async function getFranceTravailToken() {
     return cachedToken;
 }
 
-// ⚠️ C'EST CETTE LIGNE QUI EST IMPORTANTE : app.get('/api/jobs')
 app.get('/api/jobs', async (req, res) => {
     try {
         const token = await getFranceTravailToken();
@@ -52,5 +51,3 @@ app.get('/api/jobs', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Backend sur ${PORT}`));
-
-Une fois que votre `server.js` et votre `index.html` correspondent parfaitement, la communication se fera sans aucun blocage !
